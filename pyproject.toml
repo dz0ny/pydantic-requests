@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "pydantic-requests"
+version = "0.1.1"
+description = "A pydantic integration with requests."
+authors = ["Janez Troha <dz0ny@ubuntu.si>"]
+license = "MIT"
+readme = 'README.md'
+
+repository = "https://github.com/dz0ny/pydantic-requests"
+homepage = "https://github.com/dz0ny/pydantic-requests"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydantic = "^0.25.0"
+requests = "^2.21"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.5"
+autoflake = "^1.3"
+black = {version = "^18.3-alpha.0",allows-prereleases = true}
+pytest-cover = "^3.0"
+isort = "^4.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
