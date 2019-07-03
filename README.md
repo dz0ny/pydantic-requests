@@ -47,8 +47,8 @@ with PydanticSession(
     )
     res.raise_for_status()
     query: DNSQuery = res.model
-    if query.Status != DNSStatus.NXDomain:
-        print("Domain is registered.")
+    if query.Status == DNSStatus.NXDomain:
+        print("Domain is not registered.")
     else:
         print("Domain is registered.")
 
