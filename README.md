@@ -1,6 +1,5 @@
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/dz0ny/pydantic-requests.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dz0ny/pydantic-requests/context:python)
-
-[![PyPI](https://img.shields.io/pypi/dm/pydantic-requests.svg](https://pypi.org/project/pydantic-requests/)
+[![PyPI](https://img.shields.io/pypi/dm/pydantic-requests.svg)](https://pypi.org/project/pydantic-requests/)
 
 
 # Marriage of Pydantic and Requests
