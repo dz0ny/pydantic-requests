@@ -22,18 +22,19 @@ class PydanticResponse(requests.Response):
     def model(self) -> t.Type[BaseModel]:
         if not self._object:
             try:
-                self._object = self.session.handlers[self.status_code](**self.json())
-            except ValueError:
-                raise ValueError(
+                model = self.session.handlers[self.status_code]
+            except KeyError:
+                raise RuntimeError(
                     f"Parser for status code {self.status_code} is missing in session."
                 )
+            self._object = model.parse_obj(self.json())
         return self._object
 
     @classmethod
     def _from_response(cls, response, session: PydanticSession):
-        html_r = cls(session=session)
-        html_r.__dict__.update(response.__dict__)
-        return html_r
+        pydantic_r = cls(session=session)
+        pydantic_r.__dict__.update(response.__dict__)
+        return pydantic_r
 
 
 class PydanticSession(requests.Session):
