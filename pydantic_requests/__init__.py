@@ -38,7 +38,7 @@ class PydanticResponse(requests.Response):
 
 
 class PydanticSession(requests.Session):
-    """ A consumable session, for cookie persistence and connection pooling,
+    """A consumable session, for cookie persistence and connection pooling,
     amongst other things.
     """
 
@@ -50,5 +50,5 @@ class PydanticSession(requests.Session):
             self.headers.update(headers)
 
     def response_hook(self, response, **kwargs) -> PydanticResponse:
-        """ Replace response by PydanticResponse. """
+        """Replace response by PydanticResponse."""
         return PydanticResponse._from_response(response, self)

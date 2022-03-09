@@ -8,7 +8,7 @@ all: install
 .PHONY: install
 install: .venv/$(hash)
 .venv/$(hash):
-	poetry config settings.virtualenvs.in-project true
+	mkdir .venv
 	poetry install
 	@ touch $@
 

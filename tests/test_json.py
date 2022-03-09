@@ -8,7 +8,7 @@ from pydantic_requests import PydanticResponse, PydanticSession
 
 
 class Foo(BaseModel):
-    foo: t.Any
+    foo: str
 
 
 def test_valid_parser_and_model(cov):
